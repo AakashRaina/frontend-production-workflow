@@ -1,8 +1,8 @@
-FROM node:alpine as builder
+FROM node:alpine
 
 WORKDIR /app
 
-COPY ./package.json /app
+COPY package*.json /app
 
 RUN npm install
 
@@ -14,6 +14,6 @@ RUN npm run build
 
 FROM nginx
 
-COPY --from=builder /app/build /usr/share/nginx/html
+COPY --from=0 /app/build /usr/share/nginx/html
 
 # Nginx image automatically starts the server so we don't need to
