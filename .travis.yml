@@ -15,7 +15,7 @@ deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
   app: "frontend-production-workflow"
-  env: "Frontendproductionworkflow-env"
+  env: "Frontendproductionworkflow-env-1"
   bucket_name: "elasticbeanstalk-us-east-2-813307445915"
   bucket_path: "frontend-production-workflow"
   on:
