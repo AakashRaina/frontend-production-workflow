@@ -1,3 +1,5 @@
+language: generic
+
 sudo: required
 
 services:
@@ -7,4 +9,4 @@ before_install:
   - docker build -t aakashraina/frontend-production-workflow -f Dockerfile.dev .
 
 script:
-  - docker run aakashraina/frontend-production-workflow npm run test -- --coverage
+  - docker run -e CI=true aakashraina/frontend-production-workflow npm run test -- --coverage
